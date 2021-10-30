@@ -1,0 +1,13 @@
+services:
+  build:
+    # build: .
+    command: clang++ -o /out/main /src/main.cpp
+    image: dakotajang/clang
+    volumes:
+      - ./src:/src
+      - ./out:/out
+  run:
+    image: dakotajang/clang
+    command: /out/main a b c
+    volumes:
+      - ./out:/out
